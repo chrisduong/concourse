@@ -94,4 +94,12 @@ var _ = Describe("Baggageclaim Drivers", func() {
 			ShouldWork: true,
 		}),
 	)
+
+	FDescribe("with a real btrfs partition", func() {
+		By("deploying concourse to cluster-1 with ONLY one worker and having the worker pod use the gcloud disk and format it with btrfs")
+		By("setting a pipeline that will fail")
+		By("running the pipeline to create volumes on the gcloud disk")
+		By("restarting the pod/triggering the initContainer script")
+		By("asserting that the initContainer script doesn't fail")
+	})
 })
